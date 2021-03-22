@@ -12,12 +12,7 @@ import {
   IconButton,
   useTheme,
 } from 'react-native-paper';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
+
 
 interface PrivateRouteProps {
   data: any;
@@ -33,7 +28,7 @@ const UserComponent:React.FunctionComponent<PrivateRouteProps>= ({
     if (error) return <Text>Error! ${error.message}</Text>;
 
     const userList = search.edges // extracted after response loads
-    console.log(userList)
+    // console.log(userList)
     // const classes = useStyles();
     const {
       colors: { background },
