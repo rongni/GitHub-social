@@ -1,0 +1,1 @@
+export const GITHUB_ACCESS_TOKEN = '6b5e835e5b74e13df0e91a6393101fd1d20c81ae';
