@@ -1,22 +1,10 @@
 import gql from 'graphql-tag'
 
 const query = {
-    fetchUser: gql`
+    fetchRepo: gql`
     query fetchUser($login: String!){
         user(login: $login) {
             login
-            name
-            bio
-            email
-            websiteUrl
-            createdAt
-            avatarUrl
-            following{
-                totalCount
-            }
-            followers {
-                totalCount
-            }
             repositories(first: 50, isFork: false, orderBy: {field: STARGAZERS, direction: DESC}) {
                 totalCount
                 nodes {
