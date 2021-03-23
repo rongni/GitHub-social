@@ -1,24 +1,9 @@
 import React from 'react';
-import {
-	ScrollView,
-	View,
-	Image,
-	Text,
-	FlatList,
-	SafeAreaView,
-} from 'react-native';
+import { Text, FlatList } from 'react-native';
 import { graphql } from 'react-apollo';
-import query from '../graphql_query';
-// import { Avatar ,Card,ListItem, Toolbar } from 'react-native-material-ui';
-import { Alert, StyleSheet } from 'react-native';
-import {
-	Avatar,
-	Paragraph,
-	Card,
-	Button,
-	IconButton,
-	useTheme,
-} from 'react-native-paper';
+import query from '../query_help';
+import { StyleSheet } from 'react-native';
+import { Avatar, Card, useTheme } from 'react-native-paper';
 
 // interface PrivateRouteProps {
 //   data: any;

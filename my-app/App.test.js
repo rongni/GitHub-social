@@ -123,26 +123,28 @@ describe('<Repo />', () => {
 	});
 });
 
-function createBadClient() {
-	const httpLink = createHttpLink({
-		uri: 'https://api.github.com/graphql',
-		fetch,
+describe('<Profile />', () => {
+	it('loading', () => {
+		const tree = renderer
+			.create(
+				<ApolloProvider client={createClient()}>
+					<User searchQuery='rongni' navigation={navigation} />
+				</ApolloProvider>
+			)
+			.toJSON();
+		expect(tree.children).toStrictEqual(['fetching posts... ']);
 	});
+});
 
-	// apply widdleware to add access token to request
-	let middlewareLink = new ApolloLink((operation, forward) => {
-		operation.setContext({
-			headers: {
-				authorization: `cccc`,
-			},
-		});
-		return forward(operation);
+describe('<Repository />', () => {
+	it('loading ', () => {
+		const tree = renderer
+			.create(
+				<ApolloProvider client={createClient()}>
+					<Repo navigation={navigation_two} />
+				</ApolloProvider>
+			)
+			.toJSON();
+		expect(tree.children).toStrictEqual(['fetching posts... ']);
 	});
-	const link = middlewareLink.concat(httpLink);
-
-	// Initialize Apollo Client with URL to our server
-	return new ApolloClient({
-		link: link,
-		cache: new InMemoryCache(),
-	});
-}
+});

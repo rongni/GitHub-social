@@ -13,10 +13,10 @@ export let SEARCH_QUERY = '';
 
 const theme = {
 	...DefaultTheme,
-	roundness: 2,
+	roundness: 4,
 	colors: {
 		...DefaultTheme.colors,
-		primary: '#3498db',
+		primary: '#3497db',
 		accent: '#f1c40f',
 	},
 };
@@ -29,7 +29,7 @@ const Home = ({ navigation: { navigate } }) => {
 	return (
 		<PaperProvider theme={theme}>
 			<TextInput
-				label='Search Github'
+				label='Search Profile'
 				value={text}
 				onChangeText={(text) => setText(text)}
 				theme={theme}

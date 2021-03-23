@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import RepoComponent from './repo_components';
 import { graphql } from 'react-apollo';
-import query from '../graphql_query';
+import query from '../query_help';
 
 // interface PrivateRouteProps {
 // 	navigation: any;
