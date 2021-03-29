@@ -7,6 +7,7 @@ import { ApolloProvider } from 'react-apollo';
 import Router from './Components/router';
 import { GITHUB_ACCESS_TOKEN } from './config';
 
+
 export default function App() {
 	function createClient() {
 		const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
@@ -33,5 +34,6 @@ export default function App() {
 		<ApolloProvider client={createClient()}>
 			<Router />
 		</ApolloProvider>
+
 	);
 }

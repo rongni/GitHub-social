@@ -2,17 +2,35 @@
 
 exports[`renders correctly 1`] = `
 <Text>
-  fetching posts... 
+  Fetching repos... 
 </Text>
 `;
 
 exports[`renders correctly 2`] = `
 <Text>
-  fetching posts... 
+  Fetching repos... 
 </Text>
 `;
 
 exports[`renders correctly 3`] = `
+<Text>
+  Fetching users... 
+</Text>
+`;
+
+exports[`renders correctly 4`] = `
+<Text>
+  fetching posts... 
+</Text>
+`;
+
+exports[`renders correctly 5`] = `
+<Text>
+  fetching posts... 
+</Text>
+`;
+
+exports[`renders correctly 6`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"
@@ -27,8 +45,8 @@ exports[`renders correctly 3`] = `
       Array [
         Object {
           "backgroundColor": "rgb(231, 231, 231)",
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "justifyContent": "center",
@@ -89,7 +107,7 @@ exports[`renders correctly 3`] = `
           onLayout={[Function]}
           style={
             Object {
-              "color": "#3498db",
+              "color": "#3497db",
               "fontFamily": "System",
               "fontSize": 16,
               "fontWeight": undefined,
@@ -115,7 +133,7 @@ exports[`renders correctly 3`] = `
             }
           }
         >
-          Search Github
+          Search Profile
         </Text>
         <Text
           numberOfLines={1}
@@ -147,7 +165,7 @@ exports[`renders correctly 3`] = `
             }
           }
         >
-          Search Github
+          Search Profile
         </Text>
       </View>
       <TextInput
@@ -160,7 +178,7 @@ exports[`renders correctly 3`] = `
         placeholder=""
         placeholderTextColor="rgba(0, 0, 0, 0.54)"
         rejectResponderTermination={true}
-        selectionColor="#3498db"
+        selectionColor="#3497db"
         style={
           Array [
             Object {
@@ -203,7 +221,7 @@ exports[`renders correctly 3`] = `
       Object {
         "backgroundColor": "transparent",
         "borderColor": "transparent",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "borderStyle": "solid",
         "borderWidth": 0,
         "elevation": 0,
@@ -233,7 +251,7 @@ exports[`renders correctly 3`] = `
             "overflow": "hidden",
           },
           Object {
-            "borderRadius": 2,
+            "borderRadius": 4,
           },
         ]
       }
@@ -275,7 +293,7 @@ exports[`renders correctly 3`] = `
                   "textTransform": "uppercase",
                 },
                 Object {
-                  "color": "#3498db",
+                  "color": "#3497db",
                   "fontFamily": "System",
                   "fontWeight": "500",
                 },
@@ -292,38 +310,6 @@ exports[`renders correctly 3`] = `
         </Text>
       </View>
     </View>
-  </View>
-</View>
-`;
-
-exports[`renders correctly 4`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
-  <View>
-    <Text>
-      Follower is here
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`renders correctly 5`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
-  <View>
-    <Text>
-      Following is here
-    </Text>
   </View>
 </View>
 `;
