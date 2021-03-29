@@ -4,9 +4,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Text, FlatList, StyleSheet } from 'react-native';
-import { graphql } from 'react-apollo';
+
 import { Avatar, Card } from 'react-native-paper';
-import query from '../query_help';
 
 const UserComponent = ({
   data: { loading, error, search },
@@ -23,8 +22,7 @@ const UserComponent = ({
   }
 
   const userList = search.edges; // extracted after response loads
-  // console.log(userList)
-  // const classes = useStyles();
+
   const styles = StyleSheet.create({
     container: {
 	  flex: 1,
@@ -43,7 +41,7 @@ const UserComponent = ({
       data={userList}
       keyExtractor={(item) => item.node.login.toString()}
       renderItem={({ item }) => (
-        <Card style={styles.card}>
+        <Card style={styles.card} onPress={() => navigate('Profile', { username: item.node.login })}>
           <Avatar.Image source={{ uri: item.node.avatarUrl }} />
           <Card.Title title={item.node.login} />
           <Card.Content>
@@ -63,27 +61,6 @@ const UserComponent = ({
               Website:
               {item.node.websiteUrl}
             </Text>
-            <Text>
-              Profile creation date:
-              {item.node.createdAt}
-            </Text>
-            <Text onPress={() => navigate('Follower')}>
-              followers:
-              {' '}
-              {item.node.followers.totalCount}
-            </Text>
-            <Text onPress={() => navigate('Following')}>
-              following:
-              {' '}
-              {item.node.following.totalCount}
-            </Text>
-            <Text
-              onPress={() => navigate('Repo', { username: item.node.login })}
-            >
-              Total Repos:
-              {' '}
-              {item.node.repositories.totalCount}
-            </Text>
           </Card.Content>
         </Card>
       )}
@@ -91,8 +68,8 @@ const UserComponent = ({
   );
 };
 
-const User = graphql(query.fetchUsers, {
-  options: ({ searchQuery }) => ({ variables: { login: searchQuery } }),
-})(UserComponent);
+// const User = graphql(query.fetchUsers, {
+//   options: ({ searchQuery }) => ({ variables: { login: searchQuery } }),
+// })(UserComponent);
 
-export default User;
+export default UserComponent;
