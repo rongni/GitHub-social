@@ -7,7 +7,7 @@ import { Text, FlatList, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
 
 const FollowerComponent = ({ data: { loading, error, user }, navigation: { navigate } }) => {
-  if (loading) return <Text>Fetching repos... </Text>;
+  if (loading) return <Text>fetching posts... </Text>;
   if (error) {
     return (
       <Text>
@@ -22,7 +22,7 @@ const FollowerComponent = ({ data: { loading, error, user }, navigation: { navig
       data={responseData}
       keyExtractor={(item) => item.login.toString()}
       renderItem={({ item }) => (
-        <Card style={styles.card} testID="test" onPress={() => navigate('Profile', { username: item.login })}>
+        <Card style={styles.card} testID="follower button" onPress={() => navigate('Profile', { username: item.login })}>
           <Card.Cover source={{ uri: item.avatarUrl }} />
           <Card.Title title={item.login} />
           <Card.Content>

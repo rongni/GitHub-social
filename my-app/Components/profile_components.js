@@ -29,7 +29,7 @@ const ProfileComponent = ({
         {error.message}
       </Text>
     );
-  }g
+  }
 
   const {
     login, name, bio, email, websiteUrl, createdAt, avatarUrl, repositories, followers, following,

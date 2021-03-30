@@ -1,14 +1,19 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable no-use-before-define */
 import React from 'react';
 import { StyleSheet, Text, FlatList } from 'react-native';
 import { Card } from 'react-native-paper';
 
-// eslint-disable-next-line react/prop-types
 const RepoComponent = ({ data: { loading, error, user } }) => {
-  // eslint-disable-next-line react/jsx-filename-extension
   if (loading) return <Text>fetching posts... </Text>;
   if (error) {
-    return <Text>Error!</Text>;
+    return (
+      <Text>
+        {error.message}
+      </Text>
+    );
   }
 
   // eslint-disable-next-line react/prop-types
