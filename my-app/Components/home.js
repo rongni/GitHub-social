@@ -1,3 +1,4 @@
+/* eslint-disable import/no-mutable-exports */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-shadow */
 /* eslint-disable no-const-assign */
@@ -11,7 +12,7 @@ import {
   Provider as PaperProvider,
 } from 'react-native-paper';
 
-export const SEARCH_QUERY = '';
+export let SEARCH_QUERY = '';
 
 const theme = {
   ...DefaultTheme,

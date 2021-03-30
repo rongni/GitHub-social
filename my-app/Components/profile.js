@@ -2,20 +2,21 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { graphql } from 'react-apollo';
-import RepoComponent from './repo_components';
+import ProfileComponent from './profile_components';
 import query from '../query_help';
 
-const Repo = ({
+const Profile = ({
   navigation: {
     state: {
       params: { username },
     },
+    navigate,
   },
-}) => <RepoDetail username={username} />;
+}) => <ProfileDetail username={username} navigate={navigate} />;
 // pass route prarams as props to be used in graphql HoC wrapper
 
-const RepoDetail = graphql(query.fetchRepo, {
+export const ProfileDetail = graphql(query.fetchUser, {
   options: ({ username }) => ({ variables: { login: username } }),
-})(RepoComponent);
+})(ProfileComponent);
 
-export default Repo;
+export default Profile;
