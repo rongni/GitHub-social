@@ -1,5 +1,4 @@
-
-# sp21-cs242-assignment3
+# Github Social
 
 ## Intro
 
